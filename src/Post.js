@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Post.css';
 import { Avatar } from '@mui/material';
 import avatar from './images/avatar.png';
