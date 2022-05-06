@@ -31,3 +31,10 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+@media screen and (max-width: 600px) {
+    .post__info > p {
+        font-size: 11px;
+        color: gray;
+    }
+}

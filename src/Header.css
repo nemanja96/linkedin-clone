@@ -39,5 +39,28 @@
 
 .header__right{
     display: flex;
+}
 
+@media screen and (max-width: 600px) {
+    .header{
+        flex-direction: column;
+    }
+
+    .header__left{
+        margin: 0 10px;
+    }
+
+    .header__search{
+        width: 100%;
+    }
+
+    .header__right > .headerOption{
+        margin-right: 0;
+        margin-top: 10px;
+        flex: 0.166666667;
+    }
+
+    .header__right > .headerOption .headerOption__title{
+        display: none;
+    }
 }

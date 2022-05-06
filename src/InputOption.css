@@ -14,5 +14,12 @@
 
 .inputOption > h4{
     margin-left: 5px;
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 600px) {
+    .inputOption > h4{
+        display: none;
+    }
 }

@@ -12,6 +12,12 @@ function Login() {
     const [profilePic, setProfilePic] = useState("");
     const dispatch = useDispatch();
 
+    const [show, setShow] = useState(true);
+
+    const handleClick = () => {
+        setShow(prevState => !prevState);
+    }
+
     const loginToApp = (e) => {
         e.preventDefault();
 
@@ -51,19 +57,24 @@ function Login() {
   return (
     <div className='login'>
         <img src="https://www.edigitalagency.com.au/wp-content/uploads/Linkedin-logo-png.png" />
+        <h3>Make the most of your professional life</h3>
 
-        <form>
-            <input value={name} onChange={e => setName(e.target.value)} placeholder='Full name (require if registering)' type="text" />
-            <input value={profilePic} onChange={e => setProfilePic(e.target.value)} placeholder='Profile pic URL (optional)' type="text" />
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder='Email' type="email" />
-            <input value={password} onChange={e => setPassword(e.target.value)} placeholder='Password' type="password" />
-            <button type='submit' onClick={loginToApp}>Sign In</button>
-        </form>
+        <div className='form'>
+            { show && <label for="name">Full name (require if registering)</label> }
+            { show && <input value={name} onChange={e => setName(e.target.value)} type="text" name="name"/> }
+            { show && <label for="photo">Profile photo URL</label> }
+            { show && <input value={profilePic} onChange={e => setProfilePic(e.target.value)} type="text" name="photo" /> }
+            <label for="email">Email</label>
+            <input value={email} onChange={e => setEmail(e.target.value)} type="email" name="email"/>
+            <label for="password">Password</label>
+            <input value={password} onChange={e => setPassword(e.target.value)} type="password" name="password" />
+            {show ? <button type='submit' onClick={register}>Agree &amp; Join</button> : <button type="submit" onClick={loginToApp}>Sign in</button> }
+            <p>{ show ? "Already on LinkedIn?" : "New to LinkedIn?"} <span onClick={handleClick} className="switcher">{ show ? "Sign in" : "Join now"}</span></p>
+        </div>
 
-        <p>
-            Not a member?{" "}
-            <span className='login__register' onClick={register}>Register Now</span>
-        </p>
+       
+
+        {/* <p>Already registered?{" "}<span className='login__register' onClick={loginToApp}>Login</span></p> */}
     </div>   
   )
 }

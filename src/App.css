@@ -9,6 +9,12 @@
     display: flex;
     padding-top: 20px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1130px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    .app__body{
+        flex-direction: column;
+    }
 }

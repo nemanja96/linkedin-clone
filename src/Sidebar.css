@@ -106,3 +106,25 @@
     margin-right: 10px;
     margin-left: 5px;
 }
+
+@media screen and (max-width: 600px) {
+    .sidebar{
+        top: 0px;
+        position: relative;
+        flex: 1;
+        border-radius: 10px;
+        text-align: center;
+        height: fit-content;
+        margin: 0px 20px 10px 20px;
+    }
+    
+    .sidebar__bottom{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .sidebar{
+        flex: 0.3;
+    }
+}

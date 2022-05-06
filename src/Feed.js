@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Feed.css';
 import Post from './Post';
-import CreateIcon from '@mui/icons-material/Create';
+import { Avatar } from '@mui/material';
 import InputOption from './InputOption'
 import ImageIcon from '@mui/icons-material/Image';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
@@ -47,12 +47,16 @@ function Feed() {
   return (
     <div className='feed'>
         <div className='feed__inputContainer'>
-            <div className='feed__input'>
-                <CreateIcon />
-                <form>
-                    <input value={input} onChange={(e) => setInput(e.target.value)} placeholder='Start a post' type="text" />
-                    <button onClick={sendPost} type="submit">Send</button>
-                </form>
+            <div className="feed__wrapper">
+                <Avatar src={user?.photoUrl} className="feed__avatar" sx={{ width: 50, height: 50}}>
+                    {user?.email[0].toUpperCase()}
+                </Avatar>
+                <div className='feed__input'>
+                    <form>
+                        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder='Start a post' type="text" />
+                        <button onClick={sendPost} type="submit">Send</button>
+                    </form>
+                </div>
             </div>
             <div className='feed__inputOptions'>
                 <InputOption Icon={ImageIcon} title="Photo" color="#70b5f9" />
