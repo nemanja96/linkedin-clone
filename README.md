@@ -1,4 +1,4 @@
-# Simple LinkedIn Clone
+# LinkedIn Clone
 
 <a href="https://linkedin-clone-5d523.web.app/" target="_blank">WEBSITE LINK</a>
 
